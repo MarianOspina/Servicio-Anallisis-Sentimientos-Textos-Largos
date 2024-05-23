@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis de Sentimiento</title>
+    <title>Sentimiento del Texto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Análisis de Sentimiento</h1>
-    <form action="/analizar" method="post">
-        <textarea name="texto" rows="5" cols="50"></textarea><br>
-        <input type="submit" value="Analizar">
-    </form>
+    <div class="container">
+        <h1>Analizador de Sentimientos</h1>
+        <form action="/analyze" method="post">
+            <textarea name="texto" rows="10" cols="50" placeholder="Escribe tu texto aquí..."></textarea>
+            <br>
+            <button type="submit">Analizar</button>
+        </form>
+        {% if sentimiento %}
+        <div class="results">
+            <h2>Resultados del Análisis</h2>
+            <p><strong>Sentimiento Promedio:</strong> {{ sentimiento }}</p>
+            <p><strong>Número de Estrellas:</strong> {{ estrellas }}</p>
+            <p><strong>Porcentaje de Confianza:</strong> {{ confianza }}%</p>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>
-
-
-
-
-
-

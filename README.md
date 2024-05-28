@@ -17,6 +17,13 @@
 # instalamos las dependencias
 
  pip install flask transformers nltk
+ 
+# instalamos tambien las librerias de PyTorch y tf-kera
+
+pip install torch torchvision torchaudio
+# De ser nesesario agregamos esta libreria
+pip install tf-keras
+
 
 # Iniciamos el servidor y podremos acceder mediante la URL que nos da el cmd
 

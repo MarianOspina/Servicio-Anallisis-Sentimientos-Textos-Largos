@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentimiento del Texto</title>
+    <title>Analizador de Sentimientos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='iconoSentimientos.jpg') }}" type="image/x-icon">
 </head>
 <body>
     <div class="container">
         <h1>Analizador de Sentimientos</h1>
         <form action="/analyze" method="post">
-            <textarea name="texto" rows="10" cols="50" placeholder="Escribe tu texto aquí..."></textarea>
+            <textarea name="texto" rows="10" placeholder="Escribe tu texto aquí..."></textarea>
             <br>
             <button type="submit">Analizar</button>
         </form>
@@ -22,6 +24,9 @@
             <p><strong>Porcentaje de Confianza:</strong> {{ confianza }}%</p>
         </div>
         {% endif %}
+        <footer>
+            <p>Desarrollado por <a href="Mariana Ospina y Angel Pinzon" target="_blank">Marina Ospina Y Angel Pinzon</a></p>
+        </footer>
     </div>
 </body>
 </html>

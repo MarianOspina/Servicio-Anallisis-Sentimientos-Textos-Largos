@@ -2,32 +2,32 @@
 
 # Para abir cualquier el entorno virtual dentro del proyecto se utilizan los siguientes comandos dentro del cmd:x
 
- cd C:\Users\usuario\Documents\Servicio-Anallisis-Sentimientos-Textos-Largos
+ `cd C:\Users\usuario\Documents\Servicio-Anallisis-Sentimientos-Textos-Largos`
 
 # modificando dependiendo de donde se guarde el prototipo
 
 # seguidamende se crea mediante
 
- python -m venv venv
+ `python -m venv venv`
 
 # luego lo activamos
 
- venv\Scripts\activate
+ `venv\Scripts\activate`
 
 # instalamos las dependencias
 
- pip install flask transformers nltk
+`pip install flask transformers nltk`
  
 # instalamos tambien las librerias de PyTorch y tf-kera
 
-pip install torch torchvision torchaudio
+`pip install torch torchvision torchaudio`
 # De ser nesesario agregamos esta libreria
-pip install tf-keras
+`pip install tf-keras`
 
 
 # Iniciamos el servidor y podremos acceder mediante la URL que nos da el cmd
 
-python modelo_entrenado.py
+`python modelo_entrenado.py`
 
 # En cualquier caso de necesitar cualquier libreria descargarla de la misma manera que las demas
 

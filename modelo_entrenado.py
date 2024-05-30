@@ -63,9 +63,14 @@ def analizar_sentimiento_hf(texto):
     else:
         confianza_promedio = 0  # Por si no hay oraciones clasificadas en esta categoría, lo cual es raro.
 
-    sentimiento_promedio_descriptivo = mapear_sentimiento(f"{sentimiento_final} estrella{'s' if sentimiento_final > 1 else ''}")
+    # Verificar si la confianza está por debajo del 60%
+    if confianza_promedio < 0.6:
+        sentimiento_promedio_descriptivo = "no seguro del sentimiento"
+    else:
+        sentimiento_promedio_descriptivo = mapear_sentimiento(f"{sentimiento_final} estrella{'s' if sentimiento_final > 1 else ''}")
 
     return sentimiento_promedio_descriptivo, f"{sentimiento_final} estrella{'s' if sentimiento_final > 1 else ''}", confianza_promedio
+
 
 @app.route('/')
 def home():
